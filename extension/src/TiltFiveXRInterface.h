@@ -37,14 +37,8 @@ static constexpr uint8_t kSdkTypeCommunityGodot = 0x70;
 class TiltFiveXRInterface : public XRInterfaceExtension {
 	GDCLASS(TiltFiveXRInterface, XRInterfaceExtension);
 
-	// clang-format off
-	enum GameBoardType {
-		NO_GAMEBOARD_SET 	= kT5_GameboardType_None,
-		LE_GAMEBOARD 		= kT5_GameboardType_LE,
-		XE_GAMEBOARD 		= kT5_GameboardType_XE,
-		XE_RAISED_GAMEBOARD = kT5_GameboardType_XE_Raised
-	};
-	// clang-format on
+public:
+	// Constants.
 
 	struct GlassesIndexEntry {
 		StringName id;
@@ -54,12 +48,8 @@ class TiltFiveXRInterface : public XRInterfaceExtension {
 		ObjectID gameboard_id;
 		bool rendering;
 	};
-
-public:
-	// Constants.
-
-	// clang-format off
-    enum ServiceEventType
+	
+	enum ServiceEventType
     {
 		E_SERVICE_STOPPED					= T5ServiceEvent::E_STOPPED,
 		E_SERVICE_RUNNING					= T5ServiceEvent::E_RUNNING,
@@ -79,8 +69,14 @@ public:
 		E_GLASSES_NOT_TRACKING		= GlassesEvent::E_NOT_TRACKING,
 		E_GLASSES_STOPPED_ON_ERROR 	= GlassesEvent::E_STOPPED_ON_ERROR
 	};
-	// clang-format on
 
+	enum GameBoardType {
+		NO_GAMEBOARD_SET 	= kT5_GameboardType_None,
+		LE_GAMEBOARD 		= kT5_GameboardType_LE,
+		XE_GAMEBOARD 		= kT5_GameboardType_XE,
+		XE_RAISED_GAMEBOARD = kT5_GameboardType_XE_Raised
+	};
+		
 	// Property setters and getters.
 
 	String get_application_id() const;

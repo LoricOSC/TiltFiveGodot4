@@ -4,6 +4,7 @@ build
 .sconsign*.dblite
 .vscode
 .vs
+.venv
 
 *.sln
 *.csproj
